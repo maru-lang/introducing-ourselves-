@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,11 +41,19 @@
             text-align: center;
         }
 
+        .hero-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 5px solid var(--secondary);
+        }
+
         .arabic-trans {
             color: var(--secondary);
             font-weight: bold;
             direction: rtl;
             unicode-bidi: embed;
+            margin-left: 5px;
         }
 
         /* Tab Interface */
@@ -93,6 +100,7 @@
 
         /* UI Elements */
         h2 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h3 { color: var(--secondary); margin-top: 25px; }
         .card { background: var(--light); padding: 20px; border-radius: 15px; margin-bottom: 20px; border-left: 5px solid var(--primary); }
         .visual-card { text-align: center; background: #fff; padding: 20px; border: 1px solid #eee; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
         
@@ -108,10 +116,9 @@
             margin: 5px 0;
         }
 
-        button:hover { opacity: 0.9; transform: scale(1.02); }
+        button:hover { opacity: 0.9; transform: scale(1.01); }
         button.check-btn { background: var(--success); }
-        button.hint-btn { background: var(--accent); }
-
+        
         textarea, input[type="text"], select {
             width: 100%;
             padding: 12px;
@@ -134,7 +141,6 @@
         .result-msg { font-weight: bold; margin-top: 10px; display: block; }
         .wrong { text-decoration: line-through; color: var(--danger); }
         .right { color: var(--success); font-weight: bold; }
-
         .clue { font-style: italic; color: #7f8c8d; font-size: 0.9rem; }
 
         svg { max-width: 150px; height: auto; margin-bottom: 15px; }
@@ -150,9 +156,11 @@
 
 <div class="container">
     <header>
-        <h1>Mastering Introductions</h1>
-        <p>Learn the 20% of language that gives you 80% of the results.</p>
+        <h1>The Art of Introduction</h1>
+        <p>Master 80% of social interactions with 20% of the effort.</p>
     </header>
+
+    <img src="https://lh3.googleusercontent.com/d/1S6m_N7xX8nI8D6aR0_rYjE7f8S4yX8_f" alt="Girls meeting in a park" class="hero-img">
 
     <div class="tabs">
         <button type="button" class="tab-btn active" onclick="openTab(event, 'tab1')">1. Vocabulary</button>
@@ -164,116 +172,152 @@
     </div>
 
     <div id="tab1" class="tab-content active">
-        <h2>Key Vocabulary</h2>
+        <h2>Key Vocabulary (80/20 Rule)</h2>
         
-        <h3>Category A: Identity & Origins</h3>
+        <h3>Category 1: Openers & Greetings</h3>
         <div class="card">
-            <strong>Hometown</strong> <span class="arabic-trans">(مسقط رأس)</span>: The city or town where you were born or grew up.
+            <strong>Nice to meet you</strong> <span class="arabic-trans">(تشرفنا / سررت بلقائك)</span>: A polite phrase used when meeting someone for the first time.
             <ul>
-                <li>My hometown is a small village near the coast.</li>
-                <li>I haven't visited my hometown in five years.</li>
-                <li>Is Cairo your hometown?</li>
+                <li>It's a pleasure to be here. Nice to meet you.</li>
+                <li>Nice to meet you, I've heard great things about your work.</li>
+                <li>A: "I'm Sarah." B: "Nice to meet you, Sarah!"</li>
             </ul>
         </div>
         <div class="card">
-            <strong>Based in</strong> <span class="arabic-trans">(مقرّه في / مقيم في)</span>: Living or working in a specific place currently.
+            <strong>By the way</strong> <span class="arabic-trans">(بالمناسبة)</span>: Used to introduce a new topic or provide extra information (like your name).
             <ul>
-                <li>I'm originally from Italy, but I'm based in London.</li>
-                <li>Our company is based in the city center.</li>
-                <li>Where are you based these days?</li>
+                <li>I'm Omar, by the way.</li>
+                <li>By the way, do you know where the library is?</li>
+                <li>That's a great bag! I'm Layla, by the way.</li>
             </ul>
         </div>
 
-        <h3>Category B: Roles & Interests</h3>
+        <h3>Category 2: Context & Background</h3>
         <div class="card">
-            <strong>Current</strong> <span class="arabic-trans">(حالي)</span>: Happening or existing now.
+            <strong>Based in</strong> <span class="arabic-trans">(مستقر في)</span>: Where you currently live or where your office is located.
             <ul>
-                <li>My current job is very stressful.</li>
-                <li>What is your current address?</li>
-                <li>I'm happy with my current situation.</li>
+                <li>I'm currently based in Dubai.</li>
+                <li>Our team is based in London, but we work remotely.</li>
+                <li>Where are you based at the moment?</li>
             </ul>
         </div>
         <div class="card">
-            <strong>Into</strong> <span class="arabic-trans">(مهتم بـ)</span>: To be very interested in or enjoy something.
+            <strong>Into</strong> <span class="arabic-trans">(مهتم بـ / أحب)</span>: Very interested in a hobby or activity.
             <ul>
-                <li>I'm really into photography lately.</li>
-                <li>Are you into sports?</li>
-                <li>He is into jazz music and classical guitar.</li>
+                <li>I'm really into graphic design.</li>
+                <li>What kind of music are you into?</li>
+                <li>I'm into hiking and outdoor photography.</li>
             </ul>
         </div>
     </div>
 
     <div id="tab2" class="tab-content">
-        <h2>Core Expressions</h2>
+        <h2>Essential Expressions</h2>
         <div class="card">
-            <strong>"I'm [Name], by the way."</strong>
-            <p><em>Context:</em> Used to introduce yourself in the middle of a conversation if you forgot at the start.</p>
+            <strong>"I've heard a lot about you."</strong> <span class="arabic-trans">(لقد سمعت الكثير عنك)</span>
+            <p><em>Context:</em> Meeting someone your friends or colleagues have mentioned before.</p>
             <ul>
-                <li>"Great weather today! I'm Alex, by the way."</li>
-                <li>"I love this song. I'm Sarah, by the way."</li>
-                <li>"Are you new here? I'm Mark, by the way."</li>
+                <li>"You're the new manager? I've heard a lot about you!"</li>
+                <li>"Finally meeting! I've heard a lot about you from Mark."</li>
+                <li>"I've heard a lot about you. It's great to put a face to the name."</li>
             </ul>
         </div>
         <div class="card">
-            <strong>"What brings you here?"</strong>
-            <p><em>Context:</em> A polite way to ask why someone is at an event or location.</p>
+            <strong>"What brings you here today?"</strong> <span class="arabic-trans">(ما الذي أتى بك إلى هنا اليوم؟)</span>
+            <p><em>Context:</em> A great conversation starter at parties, events, or meetings.</p>
             <ul>
-                <li>"Hi! What brings you to this conference?"</li>
-                <li>"Nice to meet you. What brings you to Dubai?"</li>
-                <li>"What brings you here so early?"</li>
+                <li>"Hi! What brings you to this workshop today?"</li>
+                <li>"It's a beautiful day. What brings you to the park?"</li>
+                <li>"What brings you here? Are you a friend of the host?"</li>
             </ul>
         </div>
-        <div class="card"><strong>6 more expressions included in full plan:</strong> "Nice to meet you," "I've heard a lot about you," "How about you?", "What do you do for a living?", "I'm originally from...", "Actually, I..."</div>
+        <div class="card">
+            <strong>"What do you do for a living?"</strong> <span class="arabic-trans">(ماذا تعمل؟)</span>
+            <p><em>Context:</em> Asking about someone's job or profession.</p>
+            <ul>
+                <li>"So, what do you do for a living?"</li>
+                <li>"I'm a designer. What do you do for a living?"</li>
+                <li>"I'm curious, what do you do for a living?"</li>
+            </ul>
+        </div>
+        <div class="card">
+            <strong>"How about you?" / "And yourself?"</strong> <span class="arabic-trans">(ماذا عنك؟ / وأنت؟)</span>
+            <p><em>Context:</em> Returning a question to keep the conversation balanced.</p>
+            <ul>
+                <li>"I'm from New York. How about you?"</li>
+                <li>"I work in finance. And yourself?"</li>
+                <li>"I'm into jazz. How about you?"</li>
+            </ul>
+        </div>
+        <div class="card"><strong>Other Key Expressions:</strong> "I’m currently working as a...", "How do you know [Name]?", "Have you been working there long?", "Actually, I..."</div>
     </div>
 
     <div id="tab3" class="tab-content">
-        <h2>Real-Life Dialogues</h2>
+        <h2>Natural Dialogues</h2>
         <div class="card">
-            <strong>1. The Coffee Shop</strong><br>
-            <strong>A:</strong> Hi there! Is this seat taken?<br>
-            <strong>B:</strong> No, go ahead. I'm Sarah, by the way.<br>
-            <strong>A:</strong> Nice to meet you, Sarah. I'm Ben.<br>
-            <strong>B:</strong> Nice to meet you! What brings you here today?<br>
-            <strong>A:</strong> Just working on my laptop. I'm a freelance writer.<br>
-            <strong>B:</strong> Oh, cool! I'm into writing as well.
+            <strong>1. Casual Meeting at a Park</strong><br>
+            <strong>A:</strong> Hi! I love your tote bag.<br>
+            <strong>B:</strong> Oh, thank you! I'm Maya, by the way.<br>
+            <strong>A:</strong> Nice to meet you, Maya. I'm Chloe.<br>
+            <strong>B:</strong> Nice to meet you too! What brings you here today?<br>
+            <strong>A:</strong> I'm just enjoying the sun. I'm originally from London, so I'm not used to this heat!<br>
+            <strong>B:</strong> Haha! I understand. How about you? Are you based here?
         </div>
         <div class="card">
-            <strong>2. The Business Meeting</strong><br>
-            <strong>A:</strong> Hello, you must be Mr. Ahmed.<br>
-            <strong>B:</strong> Yes, that's right. I've heard a lot about your project.<br>
-            <strong>A:</strong> All good things, I hope! I'm the lead designer.<br>
-            <strong>B:</strong> Great. I'm currently based in the Riyadh office.<br>
-            <strong>A:</strong> Welcome! Have you been working there long?<br>
-            <strong>B:</strong> About three years now.
+            <strong>2. Professional Networking</strong><br>
+            <strong>A:</strong> Hello, I'm Omar. I'm currently working as a graphic designer.<br>
+            <strong>B:</strong> Nice to meet you, Omar. I've heard a lot about your work.<br>
+            <strong>A:</strong> Oh, really? That's kind. And what do you do for a living?<br>
+            <strong>B:</strong> I'm in marketing. I'm based in Riyadh but I'm here for the conference.<br>
+            <strong>A:</strong> That's great. Have you been working there long?<br>
+            <strong>B:</strong> About five years now. It's a busy job!
         </div>
+        <div class="card">
+            <strong>3. Meeting a Friend's Friend</strong><br>
+            <strong>A:</strong> Hey! You must be Sarah. I'm Khalid.<br>
+            <strong>B:</strong> Hi Khalid! Yes, I'm Sarah. How do you know Ahmed?<br>
+            <strong>A:</strong> We went to university together. What brings you to his party?<br>
+            <strong>B:</strong> We work together. I'm a software engineer.<br>
+            <strong>A:</strong> Cool! I'm actually into coding too. How about you, do you like the job?<br>
+            <strong>B:</strong> I love it, though it can be stressful sometimes.
         </div>
+        <div class="card">
+            <strong>4. Quick Coffee Shop Chat</strong><br>
+            <strong>A:</strong> Is this seat taken? I'm Leo, by the way.<br>
+            <strong>B:</strong> No, go ahead. I'm Hana. Nice to meet you.<br>
+            <strong>A:</strong> Nice to meet you, Hana. What do you do for a living?<br>
+            <strong>B:</strong> I'm a student. I'm currently studying English pedagogy.<br>
+            <strong>A:</strong> That sounds interesting! Are you based in this city?<br>
+            <strong>B:</strong> Yes, I've lived here for three years. How about you?
+        </div>
+    </div>
 
     <div id="tab4" class="tab-content">
-        <h2>Common Mistakes</h2>
+        <h2>Common Mistakes (Fix Them!)</h2>
         <div class="card">
-            <p class="wrong">1. I have 20 years old.</p>
-            <p class="right">1. I am 20 years old.</p>
-            <p><em>Why?</em> In English, we use "to be" for age, not "to have."</p>
+            <p class="wrong">1. I have 25 years.</p>
+            <p class="right">1. I am 25 / I am 25 years old.</p>
+            <p><em>Explanation:</em> In English, we use the verb 'to be' for age, not 'to have'.</p>
         </div>
         <div class="card">
             <p class="wrong">2. I am student.</p>
             <p class="right">2. I am a student.</p>
-            <p><em>Why?</em> Always use the article "a/an" before singular professions.</p>
+            <p><em>Explanation:</em> You must use 'a' or 'an' before your profession/job title.</p>
         </div>
         <div class="card">
-            <p class="wrong">3. I am coming from Spain.</p>
-            <p class="right">3. I come from Spain / I'm from Spain.</p>
-            <p><em>Why?</em> Use Present Simple for permanent facts like your origin.</p>
+            <p class="wrong">3. I'm work as a doctor.</p>
+            <p class="right">3. I work as a doctor / I'm a doctor.</p>
+            <p><em>Explanation:</em> Don't mix 'am' with a base verb. Use 'I work' or 'I am a...'.</p>
         </div>
         <div class="card">
-            <p class="wrong">4. How do you do? (to mean 'How are you?')</p>
-            <p class="right">4. How are you? / How's it going?</p>
-            <p><em>Why?</em> "How do you do" is a very formal greeting only used when meeting for the first time, not as a general question.</p>
+            <p class="wrong">4. How do you call this?</p>
+            <p class="right">4. What do you call this?</p>
+            <p><em>Explanation:</em> When asking for a name or label, use 'What', not 'How'.</p>
         </div>
         <div class="card">
-            <p class="wrong">5. Nice to meet you. (Response: Nice to meet you too.)</p>
-            <p class="right">5. Nice to meet you. (Response: You too! / Likewise.)</p>
-            <p><em>Why?</em> While not "wrong," "You too" is more natural in modern 80/20 English.</p>
+            <p class="wrong">5. I live here since two years.</p>
+            <p class="right">5. I have lived here for two years.</p>
+            <p><em>Explanation:</em> Use 'for' with a duration of time and 'Present Perfect' for actions starting in the past.</p>
         </div>
     </div>
 
@@ -283,26 +327,37 @@
         <h3>Exercise 1: Fill-in-the-blank</h3>
         <div class="card">
             1. Nice to m<input type="text" id="ex1_1" style="width:100px"> you. <span class="clue">(Starts with: m)</span><br>
-            2. I am o<input type="text" id="ex1_2" style="width:120px"> from Jordan. <span class="clue">(Starts with: o)</span><br>
-            3. What b<input type="text" id="ex1_3" style="width:100px"> you here? <span class="clue">(Starts with: b)</span><br>
+            2. I'm b<input type="text" id="ex1_2" style="width:120px"> in Casablanca. <span class="clue">(Starts with: b)</span><br>
+            3. I'm r<input type="text" id="ex1_3" style="width:100px"> into hiking. <span class="clue">(Starts with: r)</span><br>
+            4. What do you do for a l<input type="text" id="ex1_4" style="width:120px">? <span class="clue">(Starts with: l)</span><br>
+            5. I'm Sarah, by the w<input type="text" id="ex1_5" style="width:100px">. <span class="clue">(Starts with: w)</span><br>
+            6. What b<input type="text" id="ex1_6" style="width:120px"> you here? <span class="clue">(Starts with: b)</span><br>
             <button type="button" class="check-btn" onclick="checkEx1()">Check Answers</button>
             <button type="button" onclick="toggleCorr('corr1')">Show/Hide Corrections</button>
             <div id="msg1" class="result-msg"></div>
-            <div id="corr1" class="correction">1. meet, 2. originally, 3. brings</div>
+            <div id="corr1" class="correction">1. meet, 2. based, 3. really, 4. living, 5. way, 6. brings</div>
         </div>
 
         <h3>Exercise 2: Matching</h3>
         <div class="card">
             Match the term to the definition:<br>
-            1. Hometown: <select id="mat1">
+            1. "I'm into..." <select id="mat1">
                 <option value="">--Select--</option>
-                <option value="a">Where you live now</option>
-                <option value="b">Where you were born</option>
+                <option value="a">Asking about a job</option>
+                <option value="b">Expressing an interest</option>
+                <option value="c">Asking how you met</option>
             </select><br>
-            2. Into: <select id="mat2">
+            2. "What do you do for a living?" <select id="mat2">
                 <option value="">--Select--</option>
-                <option value="a">To be inside a room</option>
-                <option value="b">To be interested in</option>
+                <option value="a">Asking about a job</option>
+                <option value="b">Expressing an interest</option>
+                <option value="c">Asking how you met</option>
+            </select><br>
+            3. "How do you know [Name]?" <select id="mat3">
+                <option value="">--Select--</option>
+                <option value="a">Asking about a job</option>
+                <option value="b">Expressing an interest</option>
+                <option value="c">Asking how you met</option>
             </select><br>
             <button type="button" class="check-btn" onclick="checkEx2()">Check Matching</button>
             <div id="msg2" class="result-msg"></div>
@@ -310,7 +365,11 @@
 
         <h3>Exercise 3: Paragraph Completion</h3>
         <div class="card">
-            "Hello! I am a s<input type="text" id="p1" style="width:80px"> <span class="clue">(s...)</span> at the local college. I am r<input type="text" id="p2" style="width:80px"> <span class="clue">(r...)</span> into music."
+            "Hi! I am Omar. I am currently w<input type="text" id="p1" style="width:100px"> <span class="clue">(w...)</span> as a teacher. 
+            I am o<input type="text" id="p2" style="width:100px"> <span class="clue">(o...)</span> from Cairo, but I am based in Fez."
+            <br><br>
+            "I'm really i<input type="text" id="p3" style="width:80px"> <span class="clue">(i...)</span> photography. 
+            How a<input type="text" id="p4" style="width:80px"> <span class="clue">(a...)</span> you? What do you do?"
             <br>
             <button type="button" class="check-btn" onclick="checkEx3()">Check Paragraph</button>
             <div id="msg3" class="result-msg"></div>
@@ -318,39 +377,55 @@
     </div>
 
     <div id="tab6" class="tab-content">
-        <h2>Image Practice & Discussion</h2>
+        <h2>Visual Practice & Discussion</h2>
         
         <div class="visual-card">
             <svg viewBox="0 0 100 100">
-                <circle cx="50" cy="35" r="15" fill="#4a90e2"/>
-                <rect x="30" y="55" width="40" height="30" rx="5" fill="#4a90e2"/>
-                <path d="M40 85 L35 95 M60 85 L65 95" stroke="#2c3e50" stroke-width="2"/>
+                <circle cx="35" cy="40" r="12" fill="#4a90e2"/>
+                <circle cx="65" cy="40" r="12" fill="#67b26f"/>
+                <path d="M30 60 Q50 80 70 60" stroke="#2c3e50" stroke-width="3" fill="none"/>
+                <path d="M35 52 L35 70 M65 52 L65 70" stroke="#2c3e50" stroke-width="2"/>
             </svg>
-            <p><strong>1. Describe this person's role:</strong></p>
-            <p class="clue">Pattern: "He looks like a..."</p>
+            <p><strong>1. These two people are meeting for the first time. What do they say?</strong></p>
+            <p class="clue">Pattern: "Nice to..."</p>
             <textarea id="open1"></textarea>
             <button type="button" onclick="toggleCorr('ans1')">Show Example Answer</button>
-            <div id="ans1" class="correction">"He looks like a professional businessman or a student."</div>
+            <div id="ans1" class="correction">"Nice to meet you! I'm Sarah, by the way."</div>
         </div>
 
         <div class="visual-card">
             <svg viewBox="0 0 100 100">
-                <rect x="20" y="20" width="60" height="60" fill="#67b26f" rx="10"/>
-                <path d="M30 40 L70 40 M30 50 L70 50 M30 60 L50 60" stroke="white" stroke-width="2"/>
+                <rect x="20" y="30" width="60" height="40" rx="5" fill="#f39c12"/>
+                <circle cx="50" cy="50" r="8" fill="white"/>
+                <rect x="45" y="60" width="10" height="15" fill="#2c3e50"/>
             </svg>
-            <p><strong>2. Describe your hometown:</strong></p>
-            <p class="clue">Pattern: "My hometown is..."</p>
+            <p><strong>2. This person is at a business conference. What is their job?</strong></p>
+            <p class="clue">Pattern: "I work as a..."</p>
             <textarea id="open2"></textarea>
             <button type="button" onclick="toggleCorr('ans2')">Show Example Answer</button>
-            <div id="ans2" class="correction">"My hometown is a busy city with many parks."</div>
+            <div id="ans2" class="correction">"I work as a manager. I'm currently based in Dubai."</div>
+        </div>
+
+        <div class="visual-card">
+            <svg viewBox="0 0 100 100">
+                <path d="M20 80 L50 20 L80 80 Z" fill="#67b26f"/>
+                <circle cx="80" cy="20" r="10" fill="#f39c12"/>
+            </svg>
+            <p><strong>3. This person is talking about their hobbies. What are they into?</strong></p>
+            <p class="clue">Pattern: "I'm really into..."</p>
+            <textarea id="open3"></textarea>
+            <button type="button" onclick="toggleCorr('ans3')">Show Example Answer</button>
+            <div id="ans3" class="correction">"I'm really into hiking and being outdoors."</div>
         </div>
 
         <div class="card">
-            <h3>Discussion Questions</h3>
+            <h3>Open-Ended Discussion</h3>
             <ol>
-                <li>Where are you originally from? <br><textarea id="q1"></textarea><button type="button" onclick="toggleCorr('aq1')">Example</button><div id="aq1" class="correction">I'm originally from Casablanca, Morocco.</div></li>
-                <li>What do you do for a living? <br><textarea id="q2"></textarea><button type="button" onclick="toggleCorr('aq2')">Example</button><div id="aq2" class="correction">I am a teacher. I work at a primary school.</div></li>
-                <li>What are you into these days? <br><textarea id="q3"></textarea><button type="button" onclick="toggleCorr('aq3')">Example</button><div id="aq3" class="correction">Lately, I'm really into learning how to cook Italian food.</div></li>
+                <li>Introduce yourself in 3 sentences using the "Elevator Pitch" method. <br><textarea id="q1"></textarea><button type="button" onclick="toggleCorr('aq1')">Example</button><div id="aq1" class="correction">Hi, I'm Omar. I work as a designer and I'm based in Meknes. I'm really into football, how about you?</div></li>
+                <li>How would you introduce yourself at a professional job interview? <br><textarea id="q2"></textarea><button type="button" onclick="toggleCorr('aq2')">Example</button><div id="aq2" class="correction">Good morning. It's nice to meet you. I am currently working as a project manager and have five years of experience.</div></li>
+                <li>Someone says "I've heard a lot about you." How do you respond? <br><textarea id="q3"></textarea><button type="button" onclick="toggleCorr('aq3')">Example</button><div id="aq3" class="correction">"Oh, really? All good things, I hope! Nice to finally meet you too."</div></li>
+                <li>Ask three different people what they "do for a living" using different phrases. <br><textarea id="q4"></textarea><button type="button" onclick="toggleCorr('aq4')">Example</button><div id="aq4" class="correction">1. What do you do for a living? 2. What's your current role? 3. What do you do?</div></li>
+                <li>Talk about your hometown and where you are based now. <br><textarea id="q5"></textarea><button type="button" onclick="toggleCorr('aq5')">Example</button><div id="aq5" class="correction">I'm originally from a small town in the north, but I'm based in the capital city now.</div></li>
             </ol>
         </div>
     </div>
@@ -373,44 +448,49 @@
 
     function toggleCorr(id) {
         var x = document.getElementById(id);
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
-        }
+        x.style.display = (x.style.display === "block") ? "none" : "block";
     }
 
     function checkEx1() {
         let score = 0;
         if(document.getElementById('ex1_1').value.toLowerCase().trim() === 'eet') score++;
-        if(document.getElementById('ex1_2').value.toLowerCase().trim() === 'riginally') score++;
-        if(document.getElementById('ex1_3').value.toLowerCase().trim() === 'rings') score++;
+        if(document.getElementById('ex1_2').value.toLowerCase().trim() === 'ased') score++;
+        if(document.getElementById('ex1_3').value.toLowerCase().trim() === 'eally') score++;
+        if(document.getElementById('ex1_4').value.toLowerCase().trim() === 'iving') score++;
+        if(document.getElementById('ex1_5').value.toLowerCase().trim() === 'ay') score++;
+        if(document.getElementById('ex1_6').value.toLowerCase().trim() === 'rings') score++;
         
-        document.getElementById('msg1').innerHTML = "Score: " + score + "/3. " + (score === 3 ? "Excellent!" : "Try again.");
-        document.getElementById('msg1').style.color = score === 3 ? "green" : "red";
+        const msg = document.getElementById('msg1');
+        msg.innerHTML = "Score: " + score + "/6. " + (score === 6 ? "Perfect!" : "Check the hints and try again.");
+        msg.style.color = score === 6 ? "var(--success)" : "var(--danger)";
     }
 
     function checkEx2() {
         let m1 = document.getElementById('mat1').value;
         let m2 = document.getElementById('mat2').value;
-        if(m1 === 'b' && m2 === 'b') {
-            document.getElementById('msg2').innerHTML = "Correct!";
-            document.getElementById('msg2').style.color = "green";
+        let m3 = document.getElementById('mat3').value;
+        const msg = document.getElementById('msg2');
+        if(m1 === 'b' && m2 === 'a' && m3 === 'c') {
+            msg.innerHTML = "All Correct!";
+            msg.style.color = "var(--success)";
         } else {
-            document.getElementById('msg2').innerHTML = "Keep trying!";
-            document.getElementById('msg2').style.color = "red";
+            msg.innerHTML = "Some are incorrect. Try again.";
+            msg.style.color = "var(--danger)";
         }
     }
 
     function checkEx3() {
         let p1 = document.getElementById('p1').value.toLowerCase().trim();
         let p2 = document.getElementById('p2').value.toLowerCase().trim();
-        if((p1 === 'tudent' || p1 === 'tudying') && p2 === 'eally') {
-            document.getElementById('msg3').innerHTML = "Perfect!";
-            document.getElementById('msg3').style.color = "green";
+        let p3 = document.getElementById('p3').value.toLowerCase().trim();
+        let p4 = document.getElementById('p4').value.toLowerCase().trim();
+        const msg = document.getElementById('msg3');
+        if(p1 === 'orking' && p2 === 'riginally' && p3 === 'nto' && p4 === 'bout') {
+            msg.innerHTML = "Well done! The paragraph is complete.";
+            msg.style.color = "var(--success)";
         } else {
-            document.getElementById('msg3').innerHTML = "Check your spelling.";
-            document.getElementById('msg3').style.color = "red";
+            msg.innerHTML = "Not quite. Check your spelling.";
+            msg.style.color = "var(--danger)";
         }
     }
 </script>
