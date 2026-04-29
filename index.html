@@ -1,524 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>ESL Lesson - Introducing Ourselves</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESL Lesson Plan - Introducing Ourselves (Grade 6)</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-font-family:Arial,Helvetica,sans-serif;
-background:linear-gradient(135deg,#eef2ff,#f8fafc,#dbeafe);
-padding:20px;
-color:#1e293b;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #f0f4ff, #dce3f7);
+  color: #333;
 }
-.container{
-max-width:1200px;
-margin:auto;
-background:#ffffffdd;
-backdrop-filter:blur(6px);
-border-radius:22px;
-box-shadow:0 15px 35px rgba(0,0,0,.12);
-overflow:hidden;
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
 }
-header{
-padding:28px;
-background:linear-gradient(135deg,#2563eb,#7c3aed);
-color:#fff;
-text-align:center;
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
-header h1{font-size:2rem;margin-bottom:8px}
-header p{opacity:.95;line-height:1.6}
-.tabs{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-padding:16px;
-background:#f1f5f9;
-justify-content:center;
+.tabs button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: #4a6cf7;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  transition: background 0.3s;
 }
-.tab-btn{
-type:button;
-border:none;
-padding:12px 16px;
-border-radius:14px;
-cursor:pointer;
-background:#e2e8f0;
-font-weight:700;
-transition:.25s;
+.tabs button:hover {
+  background: #3a5cd7;
 }
-.tab-btn:hover{transform:translateY(-2px)}
-.tab-btn.active{
-background:linear-gradient(135deg,#2563eb,#7c3aed);
-color:#fff;
-box-shadow:0 8px 20px rgba(37,99,235,.25);
+.tabs button.active {
+  background: #2a4cb7;
 }
-.tab-content{
-display:none;
-padding:24px;
-animation:fade .3s ease;
+.tab-content {
+  background: #fff;
+  border-radius: 0 8px 8px 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  display: none;
 }
-.tab-content.active{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
-.card{
-background:#fff;
-border:1px solid #e5e7eb;
-border-radius:18px;
-padding:18px;
-margin-bottom:18px;
-box-shadow:0 8px 18px rgba(0,0,0,.06);
+.tab-content.active {
+  display: block;
 }
-h2{margin-bottom:16px;color:#1d4ed8}
-h3{margin:12px 0;color:#7c3aed}
-ul{padding-left:20px;margin-top:8px}
-li{margin:6px 0}
-.word{
-font-size:1.15rem;
-font-weight:700;
-color:#0f172a;
+.arabic-trans {
+  color: #006400;
+  font-weight: bold;
 }
-.arabic-trans{
-direction:rtl;
-font-weight:700;
-color:#059669;
-margin-left:8px;
+.visual-card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:16px;
+button[type="button"] {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #4a6cf7;
+  color: #fff;
+  cursor: pointer;
 }
-input[type=text], textarea, select{
-width:100%;
-padding:10px 12px;
-border:1px solid #cbd5e1;
-border-radius:12px;
-margin-top:8px;
-font-size:1rem;
+button[type="button"]:hover {
+  background: #3a5cd7;
 }
-textarea{min-height:90px;resize:vertical}
-button.action{
-type:button;
-margin-top:10px;
-border:none;
-padding:10px 14px;
-border-radius:12px;
-cursor:pointer;
-font-weight:700;
-background:linear-gradient(135deg,#2563eb,#7c3aed);
-color:#fff;
-box-shadow:0 8px 16px rgba(37,99,235,.2);
+textarea, input[type="text"], select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
-button.secondary{
-background:#0ea5e9;
+.clue {
+  color: #888;
+  font-style: italic;
 }
-.result{
-margin-top:10px;
-font-weight:700;
-padding:8px;
-border-radius:10px;
-background:#f8fafc;
+.strike {
+  text-decoration: line-through;
+  color: red;
 }
-.correct{color:#059669}
-.wrong{color:#dc2626}
-.clue{
-color:#7c3aed;
-font-weight:700;
-}
-.visual-card{
-border:1px solid #dbeafe;
-border-radius:18px;
-padding:16px;
-background:linear-gradient(180deg,#eff6ff,#ffffff);
-margin-bottom:18px;
-}
-svg{
-width:100%;
-max-width:320px;
-height:auto;
-display:block;
-margin:auto;
-}
-.example{
-display:none;
-margin-top:8px;
-padding:10px;
-background:#ecfeff;
-border-radius:12px;
-}
-strike{color:#dc2626}
-@media(max-width:700px){
-header h1{font-size:1.5rem}
-.tab-btn{font-size:.85rem;padding:10px}
+.correct {
+  color: green;
+  font-weight: bold;
 }
 </style>
 </head>
 <body>
 <div class="container">
-<header>
-<h1>Introducing Ourselves - Grade 6 ESL</h1>
-<p>Built with the <strong>80/20 Rule</strong>: focus on the most useful words and phrases first.<br>
-Uses the <strong>Input/Output Method</strong>: learn → notice → practice → speak → write.</p>
-</header>
+  <div class="tabs">
+    <button class="tab-link active" data-tab="tab1">Vocabulary</button>
+    <button class="tab-link" data-tab="tab2">Expressions & Usage</button>
+    <button class="tab-link" data-tab="tab3">Real-Life Dialogues</button>
+    <button class="tab-link" data-tab="tab4">Common Mistakes</button>
+    <button class="tab-link" data-tab="tab5">Interactive Exercises</button>
+    <button class="tab-link" data-tab="tab6">Image Practice & Questions</button>
+  </div>
 
-<div class="tabs">
-<button type="button" class="tab-btn active" onclick="openTab(0)">1 Vocabulary</button>
-<button type="button" class="tab-btn" onclick="openTab(1)">2 Expressions</button>
-<button type="button" class="tab-btn" onclick="openTab(2)">3 Dialogues</button>
-<button type="button" class="tab-btn" onclick="openTab(3)">4 Mistakes</button>
-<button type="button" class="tab-btn" onclick="openTab(4)">5 Exercises</button>
-<button type="button" class="tab-btn" onclick="openTab(5)">6 Speaking</button>
-</div>
+  <div id="tab1" class="tab-content active">
+    <h2>Vocabulary</h2>
+    <h3>Basic Terms</h3>
+    <p><strong>Name</strong> <span class="arabic-trans">(اسم)</span> - The word by which a person is known.</p>
+    <ul>
+      <li>My name is Sarah.</li>
+      <li>What is your name?</li>
+      <li>He wrote his name on the paper.</li>
+    </ul>
+    <p><strong>Age</strong> <span class="arabic-trans">(عمر)</span> - How old someone is.</p>
+    <ul>
+      <li>I am 12 years old.</li>
+      <li>She asked about his age.</li>
+      <li>At the age of 10, he moved to a new city.</li>
+    </ul>
+    <p><strong>Hobby</strong> <span class="arabic-trans">(هواية)</span> - An activity done for enjoyment.</p>
+    <ul>
+      <li>My hobby is drawing.</li>
+      <li>He has many hobbies.</li>
+      <li>Reading is her favorite hobby.</li>
+    </ul>
+  </div>
 
-<!-- TAB 1 -->
-<section class="tab-content active">
-<h2>Key Vocabulary</h2>
+  <div id="tab2" class="tab-content">
+    <h2>Expressions & Usage</h2>
+    <p><strong>"Hello, my name is..."</strong> <span class="arabic-trans">(مرحبا، اسمي...)</span> - Use when meeting someone new.</p>
+    <ul>
+      <li>Hello, my name is Ali.</li>
+      <li>Hello, my name is Sara.</li>
+      <li>Hello, my name is Omar.</li>
+    </ul>
+    <p><strong>"Nice to meet you"</strong> <span class="arabic-trans">(سعيد بلقائك)</span> - Use after introductions.</p>
+    <ul>
+      <li>Nice to meet you, Fatima.</li>
+      <li>Nice to meet you, teacher.</li>
+      <li>Nice to meet you, everyone.</li>
+    </ul>
+    <!-- Add 6 more expressions similarly -->
+  </div>
 
-<div class="grid">
+  <div id="tab3" class="tab-content">
+    <h2>Real-Life Dialogues</h2>
+    <p><strong>Ali:</strong> Hello, my name is Ali.<br>
+    <strong>Sara:</strong> Hi Ali, I’m Sara.<br>
+    <strong>Ali:</strong> Nice to meet you.<br>
+    <strong>Sara:</strong> Nice to meet you too.<br>
+    <strong>Ali:</strong> How old are you?<br>
+    <strong>Sara:</strong> I’m 12 years old.</p>
+    <!-- Add 3 more dialogues -->
+  </div>
 
-<div class="card">
-<h3>Basic Identity</h3>
-<div class="word">Name <span class="arabic-trans">(الاسم)</span></div>
-<p>The word people use to call you.</p>
-<ul>
-<li>My name is Sara.</li>
-<li>What is your name?</li>
-<li>His name is Ali.</li>
-</ul>
+  <div id="tab4" class="tab-content">
+    <h2>Common Mistakes</h2>
+    <p><span class="strike">I am 12 years old years.</span><br>
+    <span class="correct">I am 12 years old.</span><br>
+    Explanation: "years" is repeated unnecessarily.</p>
+    <!-- Add 4 more mistakes -->
+  </div>
 
-<div class="word">Age <span class="arabic-trans">(العمر)</span></div>
-<p>How old someone is.</p>
-<ul>
-<li>I am eleven years old.</li>
-<li>What is your age?</li>
-<li>Her age is twelve.</li>
-</ul>
-</div>
+  <div id="tab5" class="tab-content">
+    <h2>Interactive Exercises</h2>
+    <h3>Exercise 1: Fill-in-the-blank</h3>
+    <p>1. Hello, my n<span class="clue">(Starts with: a)</span> is Ali.</p>
+    <input type="text" id="ex1-1">
+    <button type="button" onclick="checkFillBlank()">Check</button>
+    <button type="button" onclick="toggleCorrections('fill')">Show/Hide Corrections</button>
+    <div id="fill-corrections" style="display:none;">
+      <p>Correct: name</p>
+    </div>
 
-<div class="card">
-<h3>School Life</h3>
-<div class="word">Student <span class="arabic-trans">(تلميذ)</span></div>
-<p>A person who learns at school.</p>
-<ul>
-<li>I am a student.</li>
-<li>The student is friendly.</li>
-<li>We are students.</li>
-</ul>
+    <h3>Exercise 2: Matching</h3>
+    <p>Select the correct definition for "Hobby":</p>
+    <select id="match1">
+      <option value="">--Choose--</option>
+      <option value="activity">An activity done for enjoyment</option>
+      <option value="age">How old someone is</option>
+    </select>
+    <button type="button" onclick="checkMatching()">Check</button>
+    <div id="match-result"></div>
 
-<div class="word">Grade <span class="arabic-trans">(المستوى الدراسي)</span></div>
-<p>Your school level or class year.</p>
-<ul>
-<li>I am in grade 6.</li>
-<li>She is in my grade.</li>
-<li>Our grade is fun.</li>
-</ul>
-</div>
+    <h3>Exercise 3: Paragraph Completion</h3>
+    <p>My h<span class="clue">(Starts with: o)</span> is reading books.</p>
+    <input type="text" id="para1">
+    <button type="button" onclick="checkParagraph()">Check</button>
+    <div id="para-result"></div>
+  </div>
 
-<div class="card">
-<h3>Interests</h3>
-<div class="word">Hobby <span class="arabic-trans">(هواية)</span></div>
-<p>An activity you enjoy.</p>
-<ul>
-<li>My hobby is drawing.</li>
-<li>Football is his hobby.</li>
-<li>I have many hobbies.</li>
-</ul>
+  <div id="tab6" class="tab-content">
+    <h2>Image Practice & Open-Ended Questions</h2>
+    <h3>Part 1: Look & Describe</h3>
+    <div class="visual-card">
+      <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="lightblue"/>
+        <text x="50" y="55" text-anchor="middle" font-size="14">Me</text>
+      </svg>
+      <p>What do you see? <span class="clue">Starts with: I see...</span></p>
+      <input type="text" id="desc1">
+      <button type="button" onclick="showExample('exdesc1')">Show Example Answer</button>
+      <div id="exdesc1" style="display:none;">Example: I see a person introducing themselves.</div>
+    </div>
+    <!-- Add 2 more visual-cards -->
 
-<div class="word">Favorite <span class="arabic-trans">(المفضل)</span></div>
-<p>The thing you like most.</p>
-<ul>
-<li>Blue is my favorite color.</li>
-<li>Pizza is her favorite food.</li>
-<li>What is your favorite game?</li>
-</ul>
-</div>
-
-</div>
-</section>
-
-<!-- TAB 2 -->
-<section class="tab-content">
-<h2>Expressions & Usage</h2>
-
-<div class="card"><strong>Hello, my name is...</strong> <span class="arabic-trans">(مرحبا، اسمي...)</span>
-<p>Use when meeting someone.</p>
-<ul><li>Hello, my name is Omar.</li><li>Hello, my name is Lina.</li><li>Hello, my name is Sam.</li></ul></div>
-
-<div class="card"><strong>Nice to meet you.</strong> <span class="arabic-trans">(سعيد بلقائك)</span>
-<p>Use after meeting a person.</p>
-<ul><li>Nice to meet you, Ali.</li><li>Nice to meet you too.</li><li>It is nice to meet you.</li></ul></div>
-
-<div class="card"><strong>How old are you?</strong> <span class="arabic-trans">(كم عمرك؟)</span>
-<p>Ask age politely.</p>
-<ul><li>How old are you?</li><li>I am eleven.</li><li>She asked, how old are you?</li></ul></div>
-
-<div class="card"><strong>I am from...</strong> <span class="arabic-trans">(أنا من...)</span>
-<p>Talk about country/city.</p>
-<ul><li>I am from Morocco.</li><li>I am from Fes.</li><li>He is from Spain.</li></ul></div>
-
-<div class="card"><strong>I like...</strong> <span class="arabic-trans">(أنا أحب...)</span>
-<p>Talk about interests.</p>
-<ul><li>I like football.</li><li>I like reading.</li><li>I like music.</li></ul></div>
-
-<div class="card"><strong>What is your favorite...?</strong> <span class="arabic-trans">(ما هو ... المفضل لديك؟)</span>
-<ul><li>What is your favorite color?</li><li>What is your favorite sport?</li><li>What is your favorite food?</li></ul></div>
-
-<div class="card"><strong>I am in grade 6.</strong> <span class="arabic-trans">(أنا في المستوى السادس)</span>
-<ul><li>I am in grade 6.</li><li>My brother is in grade 6.</li><li>Are you in grade 6?</li></ul></div>
-
-<div class="card"><strong>See you later.</strong> <span class="arabic-trans">(أراك لاحقاً)</span>
-<ul><li>See you later, Sara.</li><li>Okay, see you later.</li><li>See you later at school.</li></ul></div>
-</section>
-
-<!-- TAB 3 -->
-<section class="tab-content">
-<h2>Real-Life Dialogues</h2>
-
-<div class="card">
-<p><strong>Yara:</strong> Hello, my name is Yara.<br>
-<strong>Adam:</strong> Hi, I am Adam.<br>
-<strong>Yara:</strong> Nice to meet you.<br>
-<strong>Adam:</strong> Nice to meet you too.<br>
-<strong>Yara:</strong> How old are you?<br>
-<strong>Adam:</strong> I am eleven.</p>
-</div>
-
-<div class="card">
-<p><strong>Omar:</strong> Where are you from?<br>
-<strong>Sara:</strong> I am from Fes.<br>
-<strong>Omar:</strong> Great! I am from Rabat.<br>
-<strong>Sara:</strong> Nice city!<br>
-<strong>Omar:</strong> Thank you.<br>
-<strong>Sara:</strong> You are welcome.</p>
-</div>
-
-<div class="card">
-<p><strong>Lina:</strong> What is your hobby?<br>
-<strong>Noah:</strong> I like drawing.<br>
-<strong>Lina:</strong> Nice! I like reading.<br>
-<strong>Noah:</strong> What is your favorite book?<br>
-<strong>Lina:</strong> Animal stories.<br>
-<strong>Noah:</strong> Cool!</p>
-</div>
-
-<div class="card">
-<p><strong>Teacher:</strong> What grade are you in?<br>
-<strong>Huda:</strong> I am in grade 6.<br>
-<strong>Teacher:</strong> Very good.<br>
-<strong>Huda:</strong> Thank you.<br>
-<strong>Teacher:</strong> Welcome to class.<br>
-<strong>Huda:</strong> Thank you, teacher.</p>
-</div>
-</section>
-
-<!-- TAB 4 -->
-<section class="tab-content">
-<h2>Common Mistakes</h2>
-
-<div class="card"><strike>My name Ali.</strike><br><strong>Right:</strong> My name is Ali.<br>Need the verb <strong>is</strong>.</div>
-<div class="card"><strike>I am from Morocco?</strike><br><strong>Right:</strong> I am from Morocco.<br>Use a period, not a question mark.</div>
-<div class="card"><strike>How old you are?</strike><br><strong>Right:</strong> How old are you?<br>Correct question order.</div>
-<div class="card"><strike>I likes football.</strike><br><strong>Right:</strong> I like football.<br>Use <strong>like</strong> with I.</div>
-<div class="card"><strike>I am in grade six years old.</strike><br><strong>Right:</strong> I am in grade 6.<br>Grade and age are different ideas.</div>
-</section>
-
-<!-- TAB 5 -->
-<section class="tab-content">
-<h2>Interactive Exercises</h2>
-
-<div class="card">
-<h3>Exercise 1: Fill in the Blank</h3>
-<p>1. My _____ is Sami. <span class="clue">(Starts with: n)</span></p>
-<input type="text" id="f1">
-<p>2. I am _____ Morocco. <span class="clue">(Starts with: f)</span></p>
-<input type="text" id="f2">
-<p>3. I _____ football. <span class="clue">(Starts with: l)</span></p>
-<input type="text" id="f3">
-<p>4. I am in _____ 6. <span class="clue">(Starts with: g)</span></p>
-<input type="text" id="f4">
-<p>5. Nice to _____ you. <span class="clue">(Starts with: m)</span></p>
-<input type="text" id="f5">
-<p>6. My _____ color is blue. <span class="clue">(Starts with: f)</span></p>
-<input type="text" id="f6">
-<button type="button" class="action" onclick="checkFill()">Check</button>
-<button type="button" class="action secondary" onclick="toggle('fillAns')">Show/Hide Corrections</button>
-<div id="fillRes" class="result"></div>
-<div id="fillAns" class="example">Answers: name, from, like, grade, meet, favorite</div>
-</div>
-
-<div class="card">
-<h3>Exercise 2: Matching</h3>
-<p>Name = 
-<select id="m1">
-<option value="">Choose</option>
-<option value="wrong">How old you are</option>
-<option value="correct">What people call you</option>
-<option value="wrong2">A school bag</option>
-</select></p>
-
-<p>Hobby = 
-<select id="m2">
-<option value="">Choose</option>
-<option value="correct">Something you enjoy doing</option>
-<option value="wrong">Your teacher</option>
-<option value="wrong2">A number</option>
-</select></p>
-
-<p>Grade = 
-<select id="m3">
-<option value="">Choose</option>
-<option value="wrong">A fruit</option>
-<option value="correct">Your school level</option>
-<option value="wrong2">Your city</option>
-</select></p>
-
-<button type="button" class="action" onclick="checkMatch()">Check</button>
-<button type="button" class="action secondary" onclick="toggle('matchAns')">Show/Hide Corrections</button>
-<div id="matchRes" class="result"></div>
-<div id="matchAns" class="example">Correct matches are selected where shown.</div>
-</div>
-
-<div class="card">
-<h3>Exercise 3: Paragraph Completion</h3>
-<p>Hello! My <input type="text" id="p1"> <span class="clue">(n)</span> is Aya. I am <input type="text" id="p2"> <span class="clue">(f)</span> Fes.</p>
-
-<p>I am in <input type="text" id="p3"> <span class="clue">(g)</span> 6 and I <input type="text" id="p4"> <span class="clue">(l)</span> reading.</p>
-
-<button type="button" class="action" onclick="checkPara()">Check</button>
-<button type="button" class="action secondary" onclick="toggle('paraAns')">Show/Hide Corrections</button>
-<div id="paraRes" class="result"></div>
-<div id="paraAns" class="example">Answers: name, from, grade, like</div>
-</div>
-
-</section>
-
-<!-- TAB 6 -->
-<section class="tab-content">
-<h2>Image Practice & Open Questions</h2>
-
-<h3>Part 1: Look & Describe</h3>
-
-<div class="visual-card">
-<svg viewBox="0 0 220 180">
-<circle cx="110" cy="45" r="22" fill="#fde68a"/>
-<rect x="90" y="68" width="40" height="55" rx="10" fill="#60a5fa"/>
-<line x1="90" y1="85" x2="65" y2="105" stroke="#000" />
-<line x1="130" y1="85" x2="155" y2="105" stroke="#000" />
-<line x1="100" y1="123" x2="90" y2="160" stroke="#000"/>
-<line x1="120" y1="123" x2="130" y2="160" stroke="#000"/>
-</svg>
-<p>What do you see? <span class="clue">I see a ...</span></p>
-<input type="text">
-<button type="button" class="action secondary" onclick="toggle('ex1')">Show Example Answer</button>
-<div id="ex1" class="example">I see a boy. He is saying hello.</div>
-</div>
-
-<div class="visual-card">
-<svg viewBox="0 0 220 180">
-<rect x="40" y="70" width="140" height="80" rx="10" fill="#cbd5e1"/>
-<rect x="60" y="40" width="100" height="40" rx="8" fill="#93c5fd"/>
-<circle cx="80" cy="95" r="8"/><circle cx="140" cy="95" r="8"/>
-</svg>
-<p>What do you see? <span class="clue">This is ...</span></p>
-<input type="text">
-<button type="button" class="action secondary" onclick="toggle('ex2')">Show Example Answer</button>
-<div id="ex2" class="example">This is a school bus.</div>
-</div>
-
-<div class="visual-card">
-<svg viewBox="0 0 220 180">
-<circle cx="80" cy="60" r="18" fill="#fde68a"/>
-<circle cx="140" cy="60" r="18" fill="#fde68a"/>
-<rect x="65" y="80" width="30" height="45" fill="#f9a8d4"/>
-<rect x="125" y="80" width="30" height="45" fill="#86efac"/>
-</svg>
-<p>What do you see? <span class="clue">I see two ...</span></p>
-<input type="text">
-<button type="button" class="action secondary" onclick="toggle('ex3')">Show Example Answer</button>
-<div id="ex3" class="example">I see two friends. They are talking.</div>
-</div>
-
-<h3>Part 2: Open-Ended Questions</h3>
-
-<div class="card">1. What is your name and how old are you?
-<textarea></textarea>
-<button type="button" class="action secondary" onclick="toggle('q1')">Show Example Answer</button>
-<div id="q1" class="example">My name is Youssef and I am eleven years old.</div></div>
-
-<div class="card">2. Where are you from?
-<textarea></textarea>
-<button type="button" class="action secondary" onclick="toggle('q2')">Show Example Answer</button>
-<div id="q2" class="example">I am from Morocco. I live in Fes.</div></div>
-
-<div class="card">3. What is your favorite hobby?
-<textarea></textarea>
-<button type="button" class="action secondary" onclick="toggle('q3')">Show Example Answer</button>
-<div id="q3" class="example">My favorite hobby is football.</div></div>
-
-<div class="card">4. What do you like at school?
-<textarea></textarea>
-<button type="button" class="action secondary" onclick="toggle('q4')">Show Example Answer</button>
-<div id="q4" class="example">I like English and art class.</div></div>
-
-<div class="card">5. Why is it good to introduce yourself?
-<textarea></textarea>
-<button type="button" class="action secondary" onclick="toggle('q5')">Show Example Answer</button>
-<div id="q5" class="example">It helps me make friends and speak politely.</div></div>
-
-</section>
-
-</div>
-
-<script>
-function openTab(i){
-var tabs=document.querySelectorAll('.tab-content');
-var btns=document.querySelectorAll('.tab-btn');
-for(var t=0;t<tabs.length;t++){
-tabs[t].classList.remove('active');
-btns[t].classList.remove('active');
-}
-tabs[i].classList.add('active');
-btns[i].classList.add('active');
-window.scrollTo({top:0,behavior:'smooth'});
-}
-
-function clean(v){return String(v).trim().toLowerCase();}
-
-function checkFill(){
-var ans=['name','from','like','grade','meet','favorite'];
-var score=0;
-for(var i=1;i<=6;i++){
-if(clean(document.getElementById('f'+i).value)===ans[i-1]) score++;
-}
-document.getElementById('fillRes').innerHTML="Score: "+score+"/6";
-document.getElementById('fillRes').className="result "+(score===6?'correct':'wrong');
-}
-
-function checkMatch(){
-var score=0;
-if(document.getElementById('m1').value==='correct')score++;
-if(document.getElementById('m2').value==='correct')score++;
-if(document.getElementById('m3').value==='correct')score++;
-document.getElementById('matchRes').innerHTML="Score: "+score+"/3";
-document.getElementById('matchRes').className="result "+(score===3?'correct':'wrong');
-}
-
-function checkPara(){
-var ans=['name','from','grade','like'];
-var score=0;
-for(var i=1;i<=4;i++){
-if(clean(document.getElementById('p'+i).value)===ans[i-1])score++;
-}
-document.getElementById('paraRes').innerHTML="Score: "+score+"/4";
-document.getElementById('paraRes').className="result "+(score===4?'correct':'wrong');
-}
-
-function toggle(id){
-var el=document.getElementById(id);
-if(el.style.display==='block'){el.style.display='none';}
-else{el.style.display='block';}
-}
-</script>
-</body>
-</html>
+    <h3>Part 2: Open-Ended Questions</h3>
+    <p>1. How do you introduce yourself to a new friend?</p>
+    <textarea id="q1"></textarea>
+    <button type="button" onclick="showExample
