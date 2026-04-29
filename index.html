@@ -3,50 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESL: Master the Intro (80/20 Native Method)</title>
+    <title>Grade 6 ESL: Introducing Ourselves</title>
     <style>
         :root {
             --primary: #4a90e2;
             --secondary: #67b26f;
             --accent: #f39c12;
-            --dark: #2c3e50;
-            --light: #f8f9fa;
-            --danger: #e74c3c;
-            --success: #2ecc71;
-            --shadow: 0 4px 15px rgba(0,0,0,0.1);
+            --bg: #f4f7f6;
+            --text: #2c3e50;
+            --white: #ffffff;
+            --error: #e74c3c;
+            --success: #27ae60;
         }
 
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: var(--dark);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
             margin: 0;
             padding: 20px;
-            line-height: 1.6;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            background: white;
+            background: var(--white);
             border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             overflow: hidden;
-            box-shadow: var(--shadow);
         }
 
         header {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 40px 20px;
             text-align: center;
-        }
-
-        .arabic-trans {
-            color: var(--secondary);
-            font-weight: bold;
-            direction: rtl;
-            unicode-bidi: embed;
-            margin-left: 8px;
         }
 
         .tabs {
@@ -57,344 +50,285 @@
         }
 
         .tab-btn {
-            padding: 15px 20px;
+            flex: 1;
+            padding: 15px;
             border: none;
             background: none;
             cursor: pointer;
             font-weight: bold;
-            color: var(--dark);
             transition: 0.3s;
-            flex: 1;
             min-width: 120px;
-            border-bottom: 3px solid transparent;
+            color: #666;
         }
 
         .tab-btn.active {
-            background: white;
+            background: var(--white);
             color: var(--primary);
-            border-bottom: 3px solid var(--primary);
+            border-bottom: 4px solid var(--primary);
         }
 
-        .tab-content {
+        .content-section {
             display: none;
             padding: 30px;
-            animation: fadeIn 0.4s ease-out;
+            animation: fadeIn 0.5s ease;
         }
 
-        .tab-content.active {
-            display: block;
-        }
+        .content-section.active { display: block; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        h2 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        h3 { color: var(--secondary); margin-top: 25px; }
-        
-        .card { 
-            background: var(--light); 
-            padding: 20px; 
-            border-radius: 15px; 
-            margin-bottom: 20px; 
+        .arabic-trans { color: var(--secondary); font-weight: bold; direction: rtl; }
+
+        .vocab-card, .expr-card, .mistake-card {
             border-left: 5px solid var(--primary);
-            transition: transform 0.2s;
+            background: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 10px 10px 0;
         }
-        
-        .visual-card { 
-            text-align: center; 
-            background: #fff; 
-            padding: 20px; 
-            border: 1px solid #eee; 
-            border-radius: 15px; 
-            margin-bottom: 20px; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+
+        .dialogue-box {
+            background: #eef2f7;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .dialogue-line { margin-bottom: 8px; }
+
+        input[type="text"], textarea, select {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin: 5px 0;
+            width: 100%;
         }
 
         button {
             background: var(--primary);
             color: white;
             border: none;
-            padding: 10px 22px;
+            padding: 10px 20px;
             border-radius: 8px;
             cursor: pointer;
-            font-weight: 600;
-            margin: 5px 2px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: transform 0.2s;
         }
 
-        button:hover { opacity: 0.9; }
-        button.check-btn { background: var(--success); }
-        
-        textarea, input[type="text"], select {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
+        button:hover { transform: translateY(-2px); opacity: 0.9; }
 
         .correction {
             display: none;
-            background: #e8f4fd;
-            padding: 15px;
+            background: #d4edda;
+            padding: 10px;
             border-radius: 8px;
             margin-top: 10px;
-            border: 1px dashed var(--primary);
+            color: #155724;
         }
 
-        .result-msg { font-weight: bold; margin-top: 10px; }
-        .wrong { text-decoration: line-through; color: var(--danger); }
+        .visual-card {
+            text-align: center;
+            border: 2px dashed #ccc;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+        }
+
+        .clue { color: #7f8c8d; font-style: italic; font-size: 0.9em; }
+
+        .wrong { text-decoration: line-through; color: var(--error); }
         .right { color: var(--success); font-weight: bold; }
-        .clue { font-style: italic; color: #7f8c8d; font-size: 0.9rem; }
-
-        @media (max-width: 600px) {
-            .tabs { flex-direction: column; }
-            .tab-btn { border-bottom: none; border-left: 3px solid transparent; text-align: left; }
-        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>English Introductions: Native Style</h1>
-        <p>The 80/20 Rule: Learn the phrases native speakers actually use.</p>
+        <h1>Let's Introduce Ourselves!</h1>
+        <p>Grade 6: Input/Output Mastery</p>
     </header>
 
     <div class="tabs">
-        <button type="button" class="tab-btn active" onclick="openTab(event, 'tab1')">1. Vocabulary</button>
-        <button type="button" class="tab-btn" onclick="openTab(event, 'tab2')">2. Native Expressions</button>
-        <button type="button" class="tab-btn" onclick="openTab(event, 'tab3')">3. Dialogues</button>
-        <button type="button" class="tab-btn" onclick="openTab(event, 'tab4')">4. Common Mistakes</button>
-        <button type="button" class="tab-btn" onclick="openTab(event, 'tab5')">5. Exercises</button>
-        <button type="button" class="tab-btn" onclick="openTab(event, 'tab6')">6. Practice</button>
+        <button type="button" class="tab-btn active" onclick="openTab(event, 'tab1')">Vocabulary</button>
+        <button type="button" class="tab-btn" onclick="openTab(event, 'tab2')">Expressions</button>
+        <button type="button" class="tab-btn" onclick="openTab(event, 'tab3')">Dialogues</button>
+        <button type="button" class="tab-btn" onclick="openTab(event, 'tab4')">Mistakes</button>
+        <button type="button" class="tab-btn" onclick="openTab(event, 'tab5')">Exercises</button>
+        <button type="button" class="tab-btn" onclick="openTab(event, 'tab6')">Visual Practice</button>
     </div>
 
-    <div id="tab1" class="tab-content active">
-        <h2>Key Vocabulary</h2>
-        
-        <h3>Identity & Background</h3>
-        <div class="card">
-            <strong>Originally from</strong> <span class="arabic-trans">(أصلي من)</span>: Used to talk about your hometown or birth country when living elsewhere.
+    <div id="tab1" class="content-section active">
+        <h2>Key Terms</h2>
+        <div class="vocab-card">
+            <h3>Identity (الهوية)</h3>
+            <p><strong>Nickname</strong> <span class="arabic-trans">(لقب/اسم الشهرة)</span>: A short name used by friends or family.</p>
             <ul>
-                <li>I'm originally from Morocco, but I've lived in London for years.</li>
-                <li>Where are you originally from?</li>
-                <li>She's originally from a small village in the mountains.</li>
+                <li>My name is Robert, but my nickname is Rob.</li>
+                <li>Do you have a nickname?</li>
+                <li>Her nickname is "Sunshine" because she is always happy.</li>
             </ul>
         </div>
-        <div class="card">
-            <strong>Based in</strong> <span class="arabic-trans">(مستقر في)</span>: Your current city of residence or work.
+        <div class="vocab-card">
+            <h3>Interests (اهتمامات)</h3>
+            <p><strong>Hobby</strong> <span class="arabic-trans">(هواية)</span>: An activity you do for fun in your free time.</p>
             <ul>
-                <li>I'm currently based in Casablanca.</li>
-                <li>The company is based in New York.</li>
-                <li>Are you based here permanently?</li>
-            </ul>
-        </div>
-
-        <h3>Interests & Passion</h3>
-        <div class="card">
-            <strong>Big on</strong> <span class="arabic-trans">(محب جداً لـ)</span>: Native slang for being a huge fan of something.
-            <ul>
-                <li>I'm big on outdoor activities like hiking.</li>
-                <li>Are you big on coffee?</li>
-                <li>He’s not big on social media.</li>
-            </ul>
-        </div>
-        <div class="card">
-            <strong>Keen on</strong> <span class="arabic-trans">(متحمس لـ)</span>: Common in British English for being interested in something.
-            <ul>
-                <li>I'm quite keen on learning new languages.</li>
-                <li>She's keen on joining the marketing team.</li>
-                <li>Are you keen on trying that new restaurant?</li>
+                <li>My favorite hobby is playing football.</li>
+                <li>Reading is a great hobby for learning.</li>
+                <li>I need a new hobby for the summer.</li>
             </ul>
         </div>
     </div>
 
-    <div id="tab2" class="tab-content">
-        <h2>Native Conversational Phrases</h2>
-        
-        <div class="card">
-            <strong>"I'm [Name], by the way."</strong> <span class="arabic-trans">(بالمناسبة)</span>
-            <p><em>Context:</em> The most natural way to introduce yourself mid-conversation.</p>
+    <div id="tab2" class="content-section">
+        <h2>Common Phrases</h2>
+        <div class="expr-card">
+            <h3>1. "Pleased to meet you." <span class="arabic-trans">(يسرني لقاؤك)</span></h3>
+            <p><strong>Context:</strong> A polite way to say hello for the first time.</p>
             <ul>
-                <li>"Great party! I'm Sarah, by the way."</li>
-                <li>"I love your shirt. I'm Mike, by the way."</li>
-                <li>"Are you new to the team? I'm Layla, by the way."</li>
+                <li>Hello, I am Sara. Pleased to meet you.</li>
+                <li>It is a honor. Pleased to meet you too.</li>
+                <li>Pleased to meet you, Mr. Ahmed.</li>
             </ul>
+        </div>
+        <div class="expr-card">
+            <h3>2. "I'm into..." <span class="arabic-trans">(أنا مهتم بـ)</span></h3>
+            <p><strong>Context:</strong> Used to describe hobbies or interests naturally.</p>
+            <ul>
+                <li>I'm into drawing cartoons.</li>
+                <li>Are you into video games?</li>
+                <li>I'm really into science fiction books.</li>
+            </ul>
+        </div>
         </div>
 
-        <div class="card">
-            <strong>"What brings you here?"</strong> <span class="arabic-trans">(ما الذي أتى بك إلى هنا؟)</span>
-            <p><em>Context:</em> Instead of "Why are you here?", natives use this at events or parties.</p>
-            <ul>
-                <li>"Hi! What brings you to the conference today?"</li>
-                <li>"What brings you to this part of town?"</li>
-                <li>"I didn't expect to see you! What brings you here?"</li>
-            </ul>
+    <div id="tab3" class="content-section">
+        <h2>Real-Life Conversations</h2>
+        <div class="dialogue-box">
+            <div class="dialogue-line"><strong>Omar:</strong> Hi! I don't think we've met. I'm Omar.</div>
+            <div class="dialogue-line"><strong>Ali:</strong> Hey Omar! I'm Ali. Are you new here?</div>
+            <div class="dialogue-line"><strong>Omar:</strong> Yes, I just joined the 6th grade today.</div>
+            <div class="dialogue-line"><strong>Ali:</strong> Welcome! Where are you from originally?</div>
+            <div class="dialogue-line"><strong>Omar:</strong> I am from Meknes. It's a beautiful city.</div>
+            <div class="dialogue-line"><strong>Ali:</strong> Cool! I hope you like our school.</div>
         </div>
-
-        <div class="card">
-            <strong>"I've heard so much about you."</strong> <span class="arabic-trans">(سمعت عنك الكثير)</span>
-            <p><em>Context:</em> Use this when meeting a friend's friend or a colleague you've heard of.</p>
-            <ul>
-                <li>"Finally! I've heard so much about you from Sarah."</li>
-                <li>"I've heard so much about you. It's nice to meet you."</li>
-                <li>"I've heard so much about your project. Good job!"</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <strong>"What do you do for a living?"</strong> <span class="arabic-trans">(ما هو عملك؟)</span>
-            <p><em>Context:</em> The standard way to ask about someone's job.</p>
-            <ul>
-                <li>"So, what do you do for a living?"</li>
-                <li>"It's a pleasure meeting you. What do you do for a living?"</li>
-                <li>"What do you do for a living? Are you in tech?"</li>
-            </ul>
-        </div>
-        
-        <div class="card">
-            <strong>"How about yourself?"</strong> <span class="arabic-trans">(وأنت؟ / ماذا عنك؟)</span>
-            <p><em>Context:</em> A more polite/formal version of "How about you?"</p>
-            <ul>
-                <li>"I work in sales. How about yourself?"</li>
-                <li>"I'm really into jazz. How about yourself?"</li>
-                <li>"I'm based in Tangier. How about yourself?"</li>
-            </ul>
+        <div class="dialogue-box">
+            <div class="dialogue-line"><strong>Lina:</strong> Excuse me, is this seat taken?</div>
+            <div class="dialogue-line"><strong>Mona:</strong> No, go ahead. I'm Mona, by the way.</div>
+            <div class="dialogue-line"><strong>Lina:</strong> Thanks, Mona. I'm Lina. Nice to meet you.</div>
+            <div class="dialogue-line"><strong>Mona:</strong> Nice to meet you too. What's your favorite subject?</div>
+            <div class="dialogue-line"><strong>Lina:</strong> I'm really into English and Art.</div>
+            <div class="dialogue-line"><strong>Mona:</strong> Me too! We should study together.</div>
         </div>
     </div>
 
-    <div id="tab3" class="tab-content">
-        <h2>Natural Dialogues</h2>
-        <div class="card">
-            <strong>1. At a Social Event</strong><br>
-            <strong>A:</strong> This place is beautiful! I'm Leo, by the way.<br>
-            <strong>B:</strong> I'm Maya. Nice to meet you, Leo. What brings you here?<br>
-            <strong>A:</strong> I'm a friend of the host. We went to school together.<br>
-            <strong>B:</strong> Oh, cool! I'm originally from the same hometown as him.<br>
-            <strong>A:</strong> Small world! And what do you do for a living?<br>
-            <strong>B:</strong> I'm big on graphic design, so I work as a freelancer.
+    <div id="tab4" class="content-section">
+        <h2>Avoid These Errors</h2>
+        <div class="mistake-card">
+            <p class="wrong">I am have 12 years old.</p>
+            <p class="right">I am 12 years old.</p>
+            <p><strong>Why:</strong> In English, we use the verb "to be" for age, not "to have".</p>
         </div>
-        <div class="card">
-            <strong>2. First Day at Work</strong><br>
-            <strong>A:</strong> Hello! You must be the new developer. I'm Sarah.<br>
-            <strong>B:</strong> Hi Sarah! Yes, I'm Omar. I've heard so much about you.<br>
-            <strong>A:</strong> All good things, I hope! Are you based in this office?<br>
-            <strong>B:</strong> Actually, I'm working remotely most of the time.<br>
-            <strong>A:</strong> Nice. Are you keen on coffee? We have a great machine.<br>
-            <strong>B:</strong> Definitely. Lead the way!
+        <div class="mistake-card">
+            <p class="wrong">Nice to meet your.</p>
+            <p class="right">Nice to meet you.</p>
+            <p><strong>Why:</strong> "Your" is possessive. You need the object pronoun "you".</p>
         </div>
     </div>
 
-    <div id="tab4" class="tab-content">
-        <h2>Common Pitfalls</h2>
-        <div class="card">
-            <p class="wrong">1. I have 30 years.</p>
-            <p class="right">1. I am 30 years old / I'm 30.</p>
-            <p><em>Why?</em> English uses "to be" for age.</p>
+    <div id="tab5" class="content-section">
+        <h3>Exercise 1: Fill in the Blanks</h3>
+        <p>1. Hello, my <input type="text" id="ex1_1" style="width:100px"> is Adam. <span class="clue">(Starts with: n)</span></p>
+        <p>2. I am <input type="text" id="ex1_2" style="width:100px"> in Grade 6. <span class="clue">(Starts with: s)</span></p>
+        <button type="button" onclick="checkEx1()">Check Answers</button>
+        <button type="button" onclick="toggleCorr('corr1')">Show/Hide Corrections</button>
+        <div id="corr1" class="correction">1. name | 2. student</div>
+
+        <hr>
+
+        <h3>Exercise 2: Matching</h3>
+        <p>A short name: 
+            <select id="ex2_1">
+                <option value="">Choose...</option>
+                <option value="nickname">Nickname</option>
+                <option value="hobby">Hobby</option>
+            </select>
+        </p>
+        <button type="button" onclick="checkEx2()">Check Answers</button>
+
+        <hr>
+
+        <h3>Exercise 3: Paragraph Completion</h3>
+        <div class="dialogue-box">
+            Hi! I am a new <input type="text" id="ex3_1" style="width:80px"> <span class="clue">(s...)</span>. 
+            I am <input type="text" id="ex3_2" style="width:80px"> <span class="clue">(i...)</span> photography.
         </div>
-        <div class="card">
-            <p class="wrong">2. I am work as teacher.</p>
-            <p class="right">2. I work as a teacher / I am a teacher.</p>
-            <p><em>Why?</em> Never say "I am work". Also, always use "a/an" for jobs.</p>
-        </div>
-        <div class="card">
-            <p class="wrong">3. Nice to meet you. (Response: I am too.)</p>
-            <p class="right">3. Nice to meet you. (Response: You too! / Likewise.)</p>
-            <p><em>Why?</em> "I am too" doesn't make sense here. "You too" is short for "Nice to meet you too."</p>
-        </div>
+        <button type="button" onclick="checkEx3()">Check Answers</button>
     </div>
 
-    <div id="tab5" class="tab-content">
-        <h2>Practice Your Skills</h2>
-        <h3>Exercise 1: Fill-in-the-blank</h3>
-        <div class="card">
-            1. I'm o<input type="text" id="ex1_1" style="width:120px"> from Meknes. <span class="clue">(o...)</span><br>
-            2. What do you do for a l<input type="text" id="ex1_2" style="width:120px">? <span class="clue">(l...)</span><br>
-            3. I'm really b<input type="text" id="ex1_3" style="width:80px"> on football. <span class="clue">(b...)</span><br>
-            <button type="button" class="check-btn" onclick="checkEx1()">Check</button>
-            <div id="msg1" class="result-msg"></div>
-        </div>
-
-        <h3>Exercise 2: Native Matching</h3>
-        <div class="card">
-            1. Asking about a job: <select id="mat1">
-                <option value="">--Select--</option>
-                <option value="a">What brings you here?</option>
-                <option value="b">What do you do for a living?</option>
-            </select><br>
-            2. Asking why they are here: <select id="mat2">
-                <option value="">--Select--</option>
-                <option value="a">What brings you here?</option>
-                <option value="b">Where are you based?</option>
-            </select><br>
-            <button type="button" class="check-btn" onclick="checkEx2()">Check</button>
-            <div id="msg2" class="result-msg"></div>
-        </div>
-    </div>
-
-    <div id="tab6" class="tab-content">
-        <h2>Visual Practice</h2>
+    <div id="tab6" class="content-section">
+        <h3>Part 1: Look & Describe</h3>
         <div class="visual-card">
-            <img src="friends.jpg" alt="Upload friends.jpg to your folder to see it here" style="max-width:100%; border-radius:15px; margin-bottom:15px; border: 2px dashed #ccc;">
-            
-            <p><strong>Look at the image you uploaded. What is happening?</strong></p>
-            <p class="clue">Pattern: "They are..."</p>
-            <textarea id="img_desc"></textarea>
-            <button type="button" class="check-btn" onclick="checkImg()">Check Answer</button>
-            <div id="msg_img" class="result-msg"></div>
+            <svg width="100" height="100">
+                <circle cx="50" cy="40" r="20" fill="#4a90e2" />
+                <rect x="30" y="60" width="40" height="40" rx="5" fill="#4a90e2" />
+                <text x="50" y="5" font-size="12" text-anchor="middle">Hello!</text>
+            </svg>
+            <p>What is this person doing?</p>
+            <textarea id="vis1" placeholder="Type here..."></textarea>
+            <p class="clue">Pattern: "The person is..."</p>
+            <button type="button" onclick="toggleCorr('visAns1')">Show Example Answer</button>
+            <div id="visAns1" class="correction">Example: The person is introducing himself with a wave.</div>
         </div>
 
-        <div class="card">
-            <h3>Discussion Questions</h3>
-            <ol>
-                <li>Where are you based currently? <br><textarea></textarea></li>
-                <li>What are you big on in your free time? <br><textarea></textarea></li>
-                <li>If you meet a native speaker today, how will you introduce yourself? <br><textarea></textarea></li>
-            </ol>
-        </div>
+        <h3>Part 2: Discussion</h3>
+        <p>1. If you could have any nickname, what would it be?</p>
+        <textarea placeholder="Answer here..."></textarea>
+        <button type="button" onclick="toggleCorr('open1')">Show Example Answer</button>
+        <div id="open1" class="correction">Example: I would choose "The Flash" because I love running fast.</div>
     </div>
 </div>
 
 <script>
     function openTab(evt, tabName) {
         var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tab-content");
-        for (i = 0; i < tabcontent.length; i++) tabcontent[i].classList.remove("active");
+        tabcontent = document.getElementsByClassName("content-section");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            tabcontent[i].classList.remove("active");
+        }
         tablinks = document.getElementsByClassName("tab-btn");
-        for (i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+        document.getElementById(tabName).style.display = "block";
         document.getElementById(tabName).classList.add("active");
         evt.currentTarget.classList.add("active");
     }
 
+    function toggleCorr(id) {
+        var x = document.getElementById(id);
+        x.style.display = (x.style.display === "block") ? "none" : "block";
+    }
+
     function checkEx1() {
-        let s1 = document.getElementById('ex1_1').value.toLowerCase().trim();
-        let s2 = document.getElementById('ex1_2').value.toLowerCase().trim();
-        let s3 = document.getElementById('ex1_3').value.toLowerCase().trim();
-        let score = 0;
-        if(s1 === "riginally") score++;
-        if(s2 === "iving") score++;
-        if(s3 === "ig") score++;
-        document.getElementById('msg1').innerHTML = "Score: " + score + "/3";
+        const a1 = document.getElementById('ex1_1').value.toLowerCase().trim();
+        const a2 = document.getElementById('ex1_2').value.toLowerCase().trim();
+        if(a1 === "name" && a2 === "student") alert("Great job! Both correct.");
+        else alert("Some answers are incorrect. Check the clues!");
     }
 
     function checkEx2() {
-        let m1 = document.getElementById('mat1').value;
-        let m2 = document.getElementById('mat2').value;
-        if(m1 === 'b' && m2 === 'a') {
-            document.getElementById('msg2').innerHTML = "Correct!";
-        } else {
-            document.getElementById('msg2').innerHTML = "Try again!";
-        }
+        const val = document.getElementById('ex2_1').value;
+        if(val === "nickname") alert("Correct!");
+        else alert("Try again!");
     }
 
-    function checkImg() {
-        let val = document.getElementById('img_desc').value.toLowerCase();
-        if(val.length > 5) {
-            document.getElementById('msg_img').innerHTML = "Nice description!";
-        }
+    function checkEx3() {
+        const a1 = document.getElementById('ex3_1').value.toLowerCase().trim();
+        const a2 = document.getElementById('ex3_2').value.toLowerCase().trim();
+        if(a1 === "student" && a2 === "into") alert("Perfect paragraph!");
+        else alert("Check your spelling!");
     }
 </script>
 
