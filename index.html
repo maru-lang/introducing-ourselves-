@@ -3,208 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ESL Lesson Plan - Introducing Ourselves (Grade 6)</title>
+<title>مفردات الطعام في جمل مفيدة</title>
 <style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: linear-gradient(135deg, #f0f4ff, #dce3f7);
-  color: #333;
-}
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-}
-.tabs {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-.tabs button {
-  flex: 1;
-  padding: 12px;
-  border: none;
-  background: #4a6cf7;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 8px 8px 0 0;
-  transition: background 0.3s;
-}
-.tabs button:hover {
-  background: #3a5cd7;
-}
-.tabs button.active {
-  background: #2a4cb7;
-}
-.tab-content {
-  background: #fff;
-  border-radius: 0 8px 8px 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 20px;
-  display: none;
-}
-.tab-content.active {
-  display: block;
-}
-.arabic-trans {
-  color: #006400;
-  font-weight: bold;
-}
-.visual-card {
-  background: #f9f9f9;
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-button[type="button"] {
-  margin-top: 10px;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 6px;
-  background: #4a6cf7;
-  color: #fff;
-  cursor: pointer;
-}
-button[type="button"]:hover {
-  background: #3a5cd7;
-}
-textarea, input[type="text"], select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-.clue {
-  color: #888;
-  font-style: italic;
-}
-.strike {
-  text-decoration: line-through;
-  color: red;
-}
-.correct {
-  color: green;
-  font-weight: bold;
-}
+body{margin:0;font-family:Inter,Arial,sans-serif;background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;display:flex;justify-content:center;align-items:center;min-height:100vh}
+.card{width:min(900px,92vw);background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15);border-radius:24px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+h1{margin:0 0 8px;font-size:2rem}.sub{opacity:.8;margin-bottom:20px}.top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.pill{background:#22c55e;padding:8px 14px;border-radius:999px;font-weight:700}.q{font-size:1.35rem;margin:24px 0;padding:18px;background:rgba(255,255,255,.06);border-radius:18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.btn{padding:16px;border:none;border-radius:16px;background:#334155;color:#fff;font-size:1rem;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px);background:#475569}.msg{min-height:28px;margin-top:16px;font-weight:700}.next{margin-top:18px;background:#8b5cf6}.hidden{display:none}.footer{margin-top:18px;opacity:.7;font-size:.92rem}
 </style>
 </head>
 <body>
-<div class="container">
-  <div class="tabs">
-    <button class="tab-link active" data-tab="tab1">Vocabulary</button>
-    <button class="tab-link" data-tab="tab2">Expressions & Usage</button>
-    <button class="tab-link" data-tab="tab3">Real-Life Dialogues</button>
-    <button class="tab-link" data-tab="tab4">Common Mistakes</button>
-    <button class="tab-link" data-tab="tab5">Interactive Exercises</button>
-    <button class="tab-link" data-tab="tab6">Image Practice & Questions</button>
-  </div>
-
-  <div id="tab1" class="tab-content active">
-    <h2>Vocabulary</h2>
-    <h3>Basic Terms</h3>
-    <p><strong>Name</strong> <span class="arabic-trans">(اسم)</span> - The word by which a person is known.</p>
-    <ul>
-      <li>My name is Sarah.</li>
-      <li>What is your name?</li>
-      <li>He wrote his name on the paper.</li>
-    </ul>
-    <p><strong>Age</strong> <span class="arabic-trans">(عمر)</span> - How old someone is.</p>
-    <ul>
-      <li>I am 12 years old.</li>
-      <li>She asked about his age.</li>
-      <li>At the age of 10, he moved to a new city.</li>
-    </ul>
-    <p><strong>Hobby</strong> <span class="arabic-trans">(هواية)</span> - An activity done for enjoyment.</p>
-    <ul>
-      <li>My hobby is drawing.</li>
-      <li>He has many hobbies.</li>
-      <li>Reading is her favorite hobby.</li>
-    </ul>
-  </div>
-
-  <div id="tab2" class="tab-content">
-    <h2>Expressions & Usage</h2>
-    <p><strong>"Hello, my name is..."</strong> <span class="arabic-trans">(مرحبا، اسمي...)</span> - Use when meeting someone new.</p>
-    <ul>
-      <li>Hello, my name is Ali.</li>
-      <li>Hello, my name is Sara.</li>
-      <li>Hello, my name is Omar.</li>
-    </ul>
-    <p><strong>"Nice to meet you"</strong> <span class="arabic-trans">(سعيد بلقائك)</span> - Use after introductions.</p>
-    <ul>
-      <li>Nice to meet you, Fatima.</li>
-      <li>Nice to meet you, teacher.</li>
-      <li>Nice to meet you, everyone.</li>
-    </ul>
-    <!-- Add 6 more expressions similarly -->
-  </div>
-
-  <div id="tab3" class="tab-content">
-    <h2>Real-Life Dialogues</h2>
-    <p><strong>Ali:</strong> Hello, my name is Ali.<br>
-    <strong>Sara:</strong> Hi Ali, I’m Sara.<br>
-    <strong>Ali:</strong> Nice to meet you.<br>
-    <strong>Sara:</strong> Nice to meet you too.<br>
-    <strong>Ali:</strong> How old are you?<br>
-    <strong>Sara:</strong> I’m 12 years old.</p>
-    <!-- Add 3 more dialogues -->
-  </div>
-
-  <div id="tab4" class="tab-content">
-    <h2>Common Mistakes</h2>
-    <p><span class="strike">I am 12 years old years.</span><br>
-    <span class="correct">I am 12 years old.</span><br>
-    Explanation: "years" is repeated unnecessarily.</p>
-    <!-- Add 4 more mistakes -->
-  </div>
-
-  <div id="tab5" class="tab-content">
-    <h2>Interactive Exercises</h2>
-    <h3>Exercise 1: Fill-in-the-blank</h3>
-    <p>1. Hello, my n<span class="clue">(Starts with: a)</span> is Ali.</p>
-    <input type="text" id="ex1-1">
-    <button type="button" onclick="checkFillBlank()">Check</button>
-    <button type="button" onclick="toggleCorrections('fill')">Show/Hide Corrections</button>
-    <div id="fill-corrections" style="display:none;">
-      <p>Correct: name</p>
-    </div>
-
-    <h3>Exercise 2: Matching</h3>
-    <p>Select the correct definition for "Hobby":</p>
-    <select id="match1">
-      <option value="">--Choose--</option>
-      <option value="activity">An activity done for enjoyment</option>
-      <option value="age">How old someone is</option>
-    </select>
-    <button type="button" onclick="checkMatching()">Check</button>
-    <div id="match-result"></div>
-
-    <h3>Exercise 3: Paragraph Completion</h3>
-    <p>My h<span class="clue">(Starts with: o)</span> is reading books.</p>
-    <input type="text" id="para1">
-    <button type="button" onclick="checkParagraph()">Check</button>
-    <div id="para-result"></div>
-  </div>
-
-  <div id="tab6" class="tab-content">
-    <h2>Image Practice & Open-Ended Questions</h2>
-    <h3>Part 1: Look & Describe</h3>
-    <div class="visual-card">
-      <svg width="100" height="100">
-        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="lightblue"/>
-        <text x="50" y="55" text-anchor="middle" font-size="14">Me</text>
-      </svg>
-      <p>What do you see? <span class="clue">Starts with: I see...</span></p>
-      <input type="text" id="desc1">
-      <button type="button" onclick="showExample('exdesc1')">Show Example Answer</button>
-      <div id="exdesc1" style="display:none;">Example: I see a person introducing themselves.</div>
-    </div>
-    <!-- Add 2 more visual-cards -->
-
-    <h3>Part 2: Open-Ended Questions</h3>
-    <p>1. How do you introduce yourself to a new friend?</p>
-    <textarea id="q1"></textarea>
-    <button type="button" onclick="showExample
+<div class='card'>
+<div class='top'><div><h1>🍽️ مفردات الطعام في جمل مفيدة</h1><div class='sub'>“Small words learned today become big confidence tomorrow.”</div><div class='sub' style='margin-top:8px'>اختر الكلمة المناسبة لإكمال كل جملة وتعلّم المعنى بسهولة.</div></div><div class='pill' id='score'>Score: 0</div></div>
+<div class='q' id='question'></div>
+<div class='grid' id='answers'></div>
+<div class='msg' id='msg'></div>
+<button class='btn next hidden' id='next'>Next Question</button>
+<div class='footer'>Words: bland, spicy, refreshing, bitter, recipe, ingredients, raw, savory, scrumptious</div>
+</div>
+<script>
+const data=[
+{q:'This lemonade is cold and very ____ on a hot day.',a:'refreshing',o:['bitter','raw','refreshing','bland']},
+{q:'The soup has no salt or flavor. It tastes ____.',a:'bland',o:['spicy','bland','savory','scrumptious']},
+{q:'I need eggs, milk, and flour. These are the ____.',a:'ingredients',o:['recipe','ingredients','dessert','beverage']},
+{q:'The chef followed the ____ to make the cake.',a:'recipe',o:['recipe','bitter','raw','savory']},
+{q:'This curry is very ____. My mouth feels hot!',a:'spicy',o:['refreshing','spicy','bland','raw']},
+{q:'Dark coffee can taste a little ____.',a:'bitter',o:['sweet','bitter','savory','cold']},
+{q:'The carrots are still ____; they need more cooking.',a:'raw',o:['scrumptious','raw','savory','refreshing']},
+{q:'I prefer ____ snacks like cheese crackers, not sweet candy.',a:'savory',o:['savory','bitter','recipe','raw']},
+{q:'This chocolate cake is absolutely ____!',a:'scrumptious',o:['bland','scrumptious','raw','spicy']}
+];
+let i=0,score=0;
+const q=document.getElementById('question'),ans=document.getElementById('answers'),msg=document.getElementById('msg'),next=document.getElementById('next'),scoreEl=document.getElementById('score');
+function shuffle(arr){return [...arr].sort(()=>Math.random()-.5)}
+function render(){msg.textContent='';next.classList.add('hidden');const item=data[i];q.textContent=(i+1)+'. '+item.q;ans.innerHTML='';shuffle(item.o).forEach(t=>{const b=document.createElement('button');b.className='btn';b.textContent=t;b.onclick=()=>pick(t,item.a);ans.appendChild(b);});}
+function pick(choice,correct){[...ans.children].forEach(b=>b.disabled=true);if(choice===correct){score++;scoreEl.textContent='Score: '+score;msg.textContent='✅ Correct! Great job.';msg.style.color='#4ade80';}else{msg.textContent='❌ Oops! Correct answer: '+correct;msg.style.color='#fca5a5';}next.classList.remove('hidden');}
+next.onclick=()=>{i++; if(i<data.length){render();}else{q.textContent='🎉 Game Complete! Final Score: '+score+' / '+data.length;ans.innerHTML='';msg.textContent='You learned useful food vocabulary in sentences!';next.classList.add('hidden');}}
+render();
+</script>
+</body>
+</html>
